@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Credit Card Fraud Detection</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #1e3c72, #2a5298);
+        margin: 0;
+        padding: 0;
+      }
+
+      h2 {
+        color: white;
+        margin-top: 30px;
+      }
+
+      form {
+        background: white;
+        width: 350px;
+        margin: 40px auto;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        text-align: left;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      select,
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background: #1e3c72;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: #2a5298;
+      }
+    </style>
+  </head>
+
+  <body align="center">
+    <h2>Credit Card Fraud Detection System</h2>
+
+    <form action="/predict" method="post">
+      <label>Bank</label>
+      <select name="bank">
+        <option>select one</option>
+        <option>SBI</option>
+        <option>HDFC</option>
+        <option>ICICI</option>
+        <option>Axis</option>
+        <option>Kotak</option>
+        <option>PNB</option>
+        <option>Bank of Baroda</option>
+        <option>Canara Bank</option>
+      </select>
+
+      <label>Card Type</label>
+      <select name="card">
+        <option>select one</option>
+        <option>Visa</option>
+        <option>MasterCard</option>
+        <option>RuPay</option>
+      </select>
+
+      <label>Transaction Amount</label>
+      <input type="number" name="amount" />
+
+      <label>Merchant Category</label>
+      <select name="merchant">
+        <option>select one</option>
+        <option>Grocery</option>
+        <option>Electronics</option>
+        <option>Restaurant</option>
+        <option>Travel</option>
+        <option>Fuel</option>
+        <option>Clothing</option>
+        <option>Online Shopping</option>
+      </select>
+
+      <label>City</label>
+      <select name="city">
+        <option>select one</option>
+        <option>Kolkata</option>
+        <option>Mumbai</option>
+        <option>Delhi</option>
+        <option>Bangalore</option>
+        <option>Chennai</option>
+        <option>Hyderabad</option>
+        <option>Pune</option>
+        <option>Ahmedabad</option>
+        <option>Jaipur</option>
+        <option>Lucknow</option>
+      </select>
+
+      <label>Device Type</label>
+      <select name="device">
+        <option>select one</option>
+        <option>Mobile</option>
+        <option>POS</option>
+        <option>Desktop</option>
+        <option>ATM</option>
+      </select>
+
+      <label>International</label>
+      <select name="international">
+        <option>select one</option>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+
+      <label>Transaction Hour</label>
+      <input type="number" name="hour" min="0" max="23" />
+
+      <button type="submit">Predict</button>
+    </form>
+  </body>
+</html>
